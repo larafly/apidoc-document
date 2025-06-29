@@ -1,0 +1,54 @@
+{
+  "start": {
+    "en": "Start",
+    "zh": "开始"
+  },
+  "guide": {
+    "en": "Guide",
+    "zh": "指南"
+  },
+  "introduce": {
+    "en": "Introduce",
+    "zh": "介绍"
+  },
+  "install": {
+    "en": "Installation",
+    "zh": "安装"
+  },
+  "basic": {
+    "en": "The Basics",
+    "zh": "基础"
+  },
+  "configuration": {
+    "en": "Configuration",
+    "zh": "配置"
+  },
+  "group": {
+    "en": "Group",
+    "zh": "分组"
+  },
+  "api": {
+    "en": "Api",
+    "zh": "接口"
+  },
+  "request": {
+    "en": "Requests",
+    "zh": "请求"
+  },
+  "response": {
+    "en": "Responses",
+    "zh": "响应"
+  },
+  "generate": {
+    "en": "Api Generate",
+    "zh": "接口生成"
+  },
+  "deeper": {
+    "en": "Digging Deeper",
+    "zh": "深入"
+  },
+  "custom_command": {
+    "en": "Custom Command",
+    "zh": "自定义命令"
+  }
+}

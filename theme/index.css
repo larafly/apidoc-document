@@ -1,0 +1,33 @@
+.rspress-logo {
+    height: 2.6rem;
+}
+table thead tr {
+    background-color: #0088CC;
+    color: #ffffff;
+}
+.rspress-doc [class^="language-"] .rspress-code-content > code {
+    padding: 16px 20px;
+    background-color: #384548;
+    color: #ffffff;
+}
+.clip_aacad{
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    background-image: linear-gradient(78deg, #EF3B2D 0%, #EF3B2D 45%, #6A82FB 100%);
+}
+.button_e8e0d.brand_dc619 {
+    font-size: 16px;
+    text-decoration: none;
+    color: #fff;
+    font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    text-align: center;
+    border-radius: 50px;
+    background-image: linear-gradient(78deg, #EF3B2D 0%, #EF3B2D 50%, #f09b55 100%);
+}
+.button_e8e0d.brand_dc619:hover {
+    opacity: 0.8; /* 可选：悬停时稍微变淡 */
+}
+.rspress-doc :not(:-webkit-any(pre, div, a)) > code {
+    color: #e05024;
+}

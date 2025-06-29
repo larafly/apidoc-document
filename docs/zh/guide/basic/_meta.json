@@ -1,0 +1,17 @@
+[
+  {
+    "name": "api",
+    "label": "api"
+  },
+  {
+    "name": "request",
+    "label": "request"
+  },
+  {
+    "name": "response",
+    "label": "response"
+  },{
+  "name": "generate",
+  "label": "generate"
+}
+]

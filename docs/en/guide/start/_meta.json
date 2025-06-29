@@ -1,0 +1,18 @@
+[
+  {
+    "name": "introduce",
+    "label": "introduce"
+  },
+  {
+    "name": "install",
+    "label": "install"
+  },
+  {
+    "name": "configuration",
+    "label": "configuration"
+  },
+  {
+    "name": "update_log",
+    "label": "update_log"
+  }
+]
