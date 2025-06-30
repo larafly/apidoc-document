@@ -200,3 +200,27 @@ public UserResponse $user_info;
   }
 }
 ```
+
+By default, the `response example` is generated based on the defined `Prop` attributes.
+If you need to customize the default response example, you can add a `getDemo` method in the Response class:
+
+```php
+<?php
+
+class UserLogPaginateResponse extends PaginateResponse
+{
+    ...
+
+    public function getDemo(): string
+    {
+        return <<<'json'
+{
+    "code": 200,
+    "message": "success",
+    "data": "success"
+}
+json;
+    }
+
+}
+```

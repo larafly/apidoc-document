@@ -203,3 +203,26 @@ public UserResponse $user_info;
   }
 }
 ```
+
+默认会根据定义的`Prop`属性来生成`响应示例`,如果需要修改默认的响应示例，可在Response中增加`getDemo`方法
+
+```php
+<?php
+
+class UserLogPaginateResponse extends PaginateResponse
+{
+    ...
+
+    public function getDemo(): string
+    {
+        return <<<'json'
+{
+    "code": 200,
+    "message": "success",
+    "data": "success"
+}
+json;
+    }
+
+}
+```
