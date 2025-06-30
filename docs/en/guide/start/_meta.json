@@ -10,9 +10,5 @@
   {
     "name": "configuration",
     "label": "configuration"
-  },
-  {
-    "name": "update_log",
-    "label": "update_log"
   }
 ]

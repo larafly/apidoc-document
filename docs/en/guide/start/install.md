@@ -1,50 +1,56 @@
 # Installation
 
-If you have PHP and Composer installed, you can install the Laravel installer via Composer:
+If PHP and Composer are installed, you can install the Laravel installer globally via Composer:
 
-```bash
+```sh
 composer global require laravel/installer
-``` 
+```
 
-## Creating a Laravel Application
-After installing PHP, Composer, and the Laravel installer, you can create a new Laravel application. The Laravel installer will prompt you to choose your preferred testing framework, database, and starter kit:
-```bash
+## Create Laravel Application
+
+After installing PHP, Composer, and the Laravel installer, you can create a new Laravel application. The installer will prompt you to select your preferred testing framework, database, and starter kit:
+
+```sh
 laravel new example-app
 ```
 
-Once the application is created, you can use the `dev` Composer script to start the Laravel local development server, queue workers, and Vite development server:
-```bash
+Once the application is created, use the `dev` Composer script to start the Laravel local development server, queue workers, and Vite dev server:
+
+```sh
 cd example-app
 npm install && npm run build
 composer run dev
-``` 
+```
 
-Once the development server is started, your application will be accessible in your browser at `http://localhost:8000`. Next, you can update the `.env` configuration file to use your desired database. For example, if using MySQL, you can update the `DB_*` variables in the `.env` file as follows:
-```bash
+After the server starts, your app can be accessed in the browser at `http://localhost:8000`. Next, update the `.env` configuration file to connect to your database. For example, if using MySQL, update the DB\_\* variables in `.env` like so:
+
+```sh
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
 DB_DATABASE=laravel
 DB_USERNAME=root
 DB_PASSWORD=
-``` 
+```
 
-## Installing Laravel Apidoc
+## Install Laravel Apidoc
+
 Install via Composer:
-```bash
-composer require --dev foryoufeng/larafly-apidoc
-``` 
 
-Run the following command to install the code generator:
-```bash
-php artisan generator:install
-``` 
+```sh
+composer require larafly/apidoc
+```
 
-Now you can access your application URL `http://localhost:8000/apidoc` to use `Laravel Apidoc`
+Run the following command to install the API documentation tool:
+
+```sh
+php artisan apidoc:install
+```
+
+You can now access `Laravel Apidoc` at `http://localhost:8000/apidoc`.
 
 # UI Interface
-After installation, access the link to see the following interface
 
-![Laravel Apidoc](https://generator.pp-lang.tech/ui.png)
+After installation, visiting the URL will show the following interface:
 
-![Laravel Apidoc](https://generator.pp-lang.tech/generate.png)
+![Laravel Apidoc](/ui.png)

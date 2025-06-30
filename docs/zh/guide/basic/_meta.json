@@ -10,8 +10,9 @@
   {
     "name": "response",
     "label": "response"
-  },{
-  "name": "generate",
-  "label": "generate"
-}
+  },
+  {
+    "name": "generate",
+    "label": "generate"
+  }
 ]

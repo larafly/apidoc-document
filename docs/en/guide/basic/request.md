@@ -1,9 +1,10 @@
-# 请求
-用于定义接口中请求的参数数据
+# Request
 
-### 示例
+Used to define the request parameters for API endpoints.
 
-HomeController的index请求参数中定义`UserLogRequest $request`请求类
+### Example
+
+The `index` method in `HomeController` defines the request class `UserLogRequest`:
 
 ```php
 <?php
@@ -13,10 +14,10 @@ use Larafly\Apidoc\Attributes\Api;
 use Larafly\Apidoc\Attributes\Group;
 use App\Http\Requests\UserLogRequest;
 
-#[Group('用户管理')]
+#[Group('User Management')]
 class HomeController extends Controller
 {
-    #[Api('列表页',desc:"用户列表数据")]
+    #[Api('List Page', desc: "User list data")]
     public function index(UserLogRequest $request)
     {
        ... 
@@ -24,7 +25,7 @@ class HomeController extends Controller
 }
 ```
 
-在`App\Http\Requests\UserLogRequest`定义好请求参数的 `Larafly\Apidoc\Attributes\Prop`
+Define request parameters in `App\Http\Requests\UserLogRequest` using `Larafly\Apidoc\Attributes\Prop`:
 
 ```php
 <?php
@@ -36,10 +37,10 @@ use Larafly\Apidoc\Requests\PageApiRequest;
 
 class UserLogRequest extends PageApiRequest
 {
-    #[Prop('用户id')]
+    #[Prop('User ID')]
     public int $user_id;
     
-    #[Prop('用户名称')]
+    #[Prop('User Name')]
     public ?string $name;
 
     public function rules(): array
@@ -56,31 +57,33 @@ class UserLogRequest extends PageApiRequest
     {
         $messages = parent::messages();
         return array_merge($messages, [
-            'user_id' => '用户id不能为空',
-            'name.max' => '名称不能超过3',
+            'user_id' => 'User ID is required',
+            'name.max' => 'Name cannot exceed 3 characters',
         ]);
     }
 }
-
 ```
 
-属性定义
-* `Larafly\Apidoc\Attributes\Prop` 定义请求参数的属性
+### Property Definition
 
-属性说明：
-* `#[Prop('用户id')]`：用于对该属性字段进行说明
-* 以下说明请求参数为`user_id`,字段类型为`int`,参数必填，`user_name`为`string`，不必填，属性前加上`?`表示该字段必填
+* `Larafly\Apidoc\Attributes\Prop` defines request parameter properties.
+
+### Property Explanation
+
+* `#[Prop('User ID')]`: Describes the property.
+* The request parameter `user_id` is of type `int` and required. `user_name` is of type `string` and optional. A `?` before the type indicates the field is optional.
+
 ```php
-#[Prop('用户id')]
+#[Prop('User ID')]
 public int $user_id;
 
-#[Prop('用户名称')]
+#[Prop('User Name')]
 public ?string $name;
 ```
 
-### 高级使用
+### Advanced Usage
 
-使用Enum，可创建`App\Enums\UserTypeEnum`
+Use `Enum`, for example `App\Enums\UserTypeEnum`:
 
 ```php
 <?php
@@ -91,38 +94,36 @@ enum UserTypeEnum: int
 {
     case ENABLE = 1;
     case DISABLE = 0;
-
 }
-
 ```
 
-在请求中进行使用,如下将定义请求参数的多维数组
+Used in request classes to define a multidimensional array:
 
 ```php
 <?php
 
-#[Prop(desc: '用户记录',type:[
+#[Prop(desc: 'User Records', type:[
     [
-        'name'=>'name',
-        'type'=>'?string',
-        'desc'=>'用户名称',
+        'name' => 'name',
+        'type' => '?string',
+        'desc' => 'User Name',
     ],
     [
-        'name'=>'age',
-        'type'=>'?int',
-        'desc'=>'用户年龄',
+        'name' => 'age',
+        'type' => '?int',
+        'desc' => 'User Age',
     ],
 ])]
 public ?array $user_logs;
 
-#[Prop(desc: '用户记录',type:UserApiRequest::class)]
+#[Prop(desc: 'User Records', type: UserApiRequest::class)]
 public ?array $user_logs;
 ```
 
-`type`参数说明：
-* `type=array`：`name` 表示参数的名称,`type`定义参数的类型，`desc`对参数的说明
-* `type=string`：如`type:UserApiRequest::class`，可引用其他请求类，复用请求方法
+### `type` Parameter Explanation
 
+* `type=array`: `name` is the parameter name, `type` defines the type, and `desc` is the description.
+* `type=string`: such as `type: UserApiRequest::class`, allows referencing another request class to reuse request definitions.
 
 ```php
 <?php
@@ -136,26 +137,25 @@ use Larafly\Apidoc\Requests\ApiRequest;
 
 class UserApiRequest extends ApiRequest
 {
-    #[Prop(desc: 'id',)]
+    #[Prop(desc: 'ID')]
     public int $id;
 
-    #[Prop(desc: '名称')]
+    #[Prop(desc: 'Name')]
     public ?string $name;
 
-    #[Prop(desc: '用户类型')]
+    #[Prop(desc: 'User Type')]
     public UserTypeEnum $user_type;
 
-    
-    #[Prop(desc: '用户记录',type:[
+    #[Prop(desc: 'User Records', type:[
         [
-            'name'=>'name',
-            'type'=>'?string',
-            'desc'=>'用户名称',
+            'name' => 'name',
+            'type' => '?string',
+            'desc' => 'User Name',
         ],
         [
-            'name'=>'age',
-            'type'=>'?int',
-            'desc'=>'用户年龄',
+            'name' => 'age',
+            'type' => '?int',
+            'desc' => 'User Age',
         ],
     ])]
     public ?array $user_logs;
@@ -172,20 +172,19 @@ class UserApiRequest extends ApiRequest
     public function messages(): array
     {
         return [
-            'id.required' => 'id是必须的',
-            'name.required' => '名字是必须的',
-            'name.max' => '名字长度不能超过4',
-            'user_type.required' => '用户类型是必须的',
-            'user_type' => '用户类型必须是 0 或 1',
+            'id.required' => 'ID is required',
+            'name.required' => 'Name is required',
+            'name.max' => 'Name cannot exceed 4 characters',
+            'user_type.required' => 'User type is required',
+            'user_type' => 'User type must be 0 or 1',
         ];
     }
 }
-
 ```
 
-### 继承基类说明
+### Base Class Explanation
 
-`Larafly\Apidoc\Requests\ApiRequest;` 普通请求拦截可使用这个基类
+Use `Larafly\Apidoc\Requests\ApiRequest` as the base class for normal requests:
 
 ```php
 <?php
@@ -203,20 +202,18 @@ abstract class ApiRequest extends FormRequest
         $data = $this->validated();
 
         foreach ($data as $key => $value) {
-            if (! property_exists($this, $key)) {
+            if (!property_exists($this, $key)) {
                 continue;
             }
 
             $propertyType = (new ReflectionProperty($this, $key))->getType();
 
-            if ($propertyType instanceof ReflectionNamedType && ! $propertyType->isBuiltin()) {
-                // If it's a custom class, construct an array of objects.
+            if ($propertyType instanceof ReflectionNamedType && !$propertyType->isBuiltin()) {
                 $className = $propertyType->getName();
                 if (enum_exists($className)) {
-                    // if type is  enum，use ::from to set key
                     $this->{$key} = $className::from($value);
                 } elseif (is_array($value) && array_is_list($value)) {
-                    $this->{$key} = array_map(fn ($v) => new $className(...$v), $value);
+                    $this->{$key} = array_map(fn($v) => new $className(...$v), $value);
                 } else {
                     $this->{$key} = new $className(...$value);
                 }
@@ -226,11 +223,9 @@ abstract class ApiRequest extends FormRequest
         }
     }
 }
-
 ```
 
-
-`Larafly\Apidoc\Requests\PageApiRequest;` 默认设置了分页的请求属性`page=1`和`per_page=10`
+Use `Larafly\Apidoc\Requests\PageApiRequest` to include default pagination parameters `page=1` and `per_page=10`:
 
 ```php
 <?php
@@ -241,10 +236,10 @@ use Larafly\Apidoc\Attributes\Prop;
 
 class PageApiRequest extends ApiRequest
 {
-    #[Prop(desc: '页码,最小为1')]
+    #[Prop(desc: 'Page number, minimum is 1')]
     public ?int $page = 1;
 
-    #[Prop(desc: '每页条数,最小为10，最大为100')]
+    #[Prop(desc: 'Items per page, minimum is 10, maximum is 100')]
     public ?int $per_page = 10;
 
     public function rules(): array
@@ -258,9 +253,9 @@ class PageApiRequest extends ApiRequest
     public function messages(): array
     {
         return [
-            'page.min' => '页码必须大于1',
-            'per_page.min' => '每页数必须大于10',
-            'per_page.max' => '每页数不能超过100',
+            'page.min' => 'Page number must be greater than 1',
+            'per_page.min' => 'Items per page must be greater than 10',
+            'per_page.max' => 'Items per page cannot exceed 100',
         ];
     }
 }

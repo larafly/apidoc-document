@@ -8,5 +8,10 @@
     "type": "dir",
     "name": "basic",
     "label": "basic"
+  },
+  {
+    "type": "dir",
+    "name": "deeper",
+    "label": "deeper"
   }
 ]

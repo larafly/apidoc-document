@@ -1,14 +1,14 @@
-# 自定义命令
+# Custom Command
 
-从 [接口生成](/guide/basic/generate.html) 中可以看出，生成文档的方式可以有多种，如果需要自定义文档生成规则，可生成自定义命令
+As shown in [API Generation](/guide/basic/generate.html), there are multiple ways to generate documentation. If you need custom generation rules, you can create your own custom command.
 
-### 创建命令
+### Create a Command
 
 ```sh
 php artisan make:command CustomCommand
 ```
 
-通过`ApidocMdCommand`源码可以看出，继承`ApidocCommand`后，覆写`saveControllerDoc`即可实现将文档写入到其他地方
+From the source code of `ApidocMdCommand`, you can see that by extending `ApidocCommand` and overriding `saveControllerDoc`, you can write the documentation to a different location:
 
 ```php
 <?php
@@ -31,7 +31,7 @@ class ApidocMdCommand extends ApidocCommand
      *
      * @var string
      */
-    public $description = 'generator api documents to markdown files';
+    public $description = 'generate API documents as markdown files';
 
     #[\Override]
     public function saveControllerDoc(array $api): void
@@ -41,7 +41,7 @@ class ApidocMdCommand extends ApidocCommand
 
         foreach ($api['api_methods'] as $method) {
             $markdown = $this->buildMarkdownDoc($method);
-            $fileName = $method['name'].'.md';
+            $fileName = $method['name'] . '.md';
             Storage::disk('public')->put("$folder/{$fileName}", $markdown);
         }
     }
@@ -50,11 +50,9 @@ class ApidocMdCommand extends ApidocCommand
        ...
     }
 }
-
 ```
 
-
-`CustomCommand`示例如下
+Example `CustomCommand`:
 
 ```php
 <?php
@@ -65,10 +63,9 @@ use Illuminate\Support\Facades\Storage;
 
 class CustomCommand extends ApidocCommand
 {
-
     public $signature = 'apidoc:custom';
 
-    public $description = 'custom api documents';
+    public $description = 'custom API documentation generation';
 
     #[\Override]
     public function saveControllerDoc(array $api): void
@@ -78,7 +75,7 @@ class CustomCommand extends ApidocCommand
 
         foreach ($api['api_methods'] as $method) {
             $markdown = $this->buildMarkdownDoc($method);
-            $fileName = $method['name'].'.md';
+            $fileName = $method['name'] . '.md';
             Storage::disk('public')->put("$folder/{$fileName}", $markdown);
         }
     }
@@ -89,5 +86,4 @@ class CustomCommand extends ApidocCommand
 }
 ```
 
-如果需要自定义返回值,而不是使用现在定义的返回字段，可复写`public function getResponseData(string $response_class): array` 方法
-
+If you want to customize the response data instead of using the current predefined response fields, you can override the `public function getResponseData(string $response_class): array` method.

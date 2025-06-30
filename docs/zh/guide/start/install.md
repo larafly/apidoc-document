@@ -36,6 +36,7 @@ composer require larafly/apidoc
 ```
 
 运行如下命令来安装接口文档工具
+
 ```sh
 php artisan apidoc:install
 ```

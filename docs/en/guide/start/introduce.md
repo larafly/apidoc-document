@@ -1,29 +1,20 @@
 # Introduction
 
-**Laravel Apidoc** is a code generation tool based on [Laravel](https://laravel.com/), using **Vue 2 + Element UI** for frontend rendering. It comes with a built-in default code generator that allows you to quickly generate any code you need. Additionally, you can customize code templates to suit your project’s development needs, helping you rapidly implement related business logic.
-
+Laravel Apidoc is an API documentation generation tool based on [Laravel](https://laravel.com/). It uses Vue 2 + Element UI for frontend rendering and comes with a built-in default API documentation interface. With Laravel Apidoc, you can quickly generate the API documentation you need and also customize the documentation generation to meet your project requirements, enabling fast API documentation output.
 
 ## Why Choose Laravel Apidoc
 
-Laravel Apidoc is designed around several core features:
+Laravel Apidoc is designed around the following core features:
 
-- **Clean and beautiful interface**  
-  Ensures ease of use and provides developers with a smooth development experience.
-
-- **Powerful templating capabilities**  
-  With code template management, you can easily reuse code snippets and render various custom components within templates.
-
-- **Team collaboration features**  
-  Supports internationalization, template management, database migrations, generation logs, and more.
-
-- **Extensibility**  
-  Built-in custom rules and an online editor allow for defining various rules and template functions.
-
+* **Clean and Beautiful Interface**: Ensures API documentation writing is simple and efficient, providing developers with a great development experience.
+* **Powerful API Documentation Generation**: Easily define request and response parameters through API attributes, and output well-structured documentation.
+* **Team Collaboration**: Supports internationalization, documentation management, migration, and generation to facilitate teamwork.
+* **Extensibility**: Built-in customizable request and response base classes allow defining various request and response data formats.
 
 ### Team Collaboration
 
-As projects grow larger and more team members get involved, inconsistency in development standards can become a pain point. This inconsistency can negatively impact the development experience, and over time, the problem tends to worsen.
+As projects grow larger and more people get involved, team members often struggle with inconsistent API specifications, which negatively impacts the development experience. The longer the project lasts, the more pronounced this effect becomes.
 
-This led us to think: **Can we unify code style and enforce development standards from the start through technical reviews and code templates?**
+This leads us to consider whether it is possible to achieve unified frontend and backend API development by enforcing interface standards through early technical reviews.
 
-We continued exploring this idea and ultimately achieved this goal with **Laravel Apidoc**.
+Continuously exploring this direction, we ultimately realized this goal with Laravel Apidoc.
