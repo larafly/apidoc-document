@@ -7,7 +7,7 @@ Used to define the request parameters for API endpoints.
 Use the command line to generate a Request class:
 
 ```sh
-php artisan apidoc:request UserRequest --p
+php artisan apidoc:request UserRequest
 ```
 
 If your class extends the pagination base class `PageApiRequest`, you can add the `--p` option:

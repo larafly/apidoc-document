@@ -7,7 +7,7 @@ Used to define the returned data of an API endpoint.
 Use the command line to generate a Response class:
 
 ```sh
-php artisan apidoc:response UserResponse --p
+php artisan apidoc:response UserResponse
 ```
 
 If your class extends the paginated response class `PaginateResponse`, you can add the `--p` option:

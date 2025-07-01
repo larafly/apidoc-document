@@ -6,7 +6,7 @@
 使用命令行生成Request类
 
 ```sh
-php artisan apidoc:request UserRequest --p
+php artisan apidoc:request UserRequest
 ```
 
 如果您继承分页的类`PageApiRequest`，可以加上`--p`
@@ -199,7 +199,7 @@ class UserApiRequest extends ApiRequest
 
 ### 继承基类说明
 
-`Larafly\Apidoc\Requests\ApiRequest;` 普通请求拦截可使用这个基类
+`Larafly\Apidoc\Requests\ApiRequest` 普通请求拦截可使用这个基类
 
 ```php
 <?php
@@ -244,7 +244,7 @@ abstract class ApiRequest extends FormRequest
 ```
 
 
-`Larafly\Apidoc\Requests\PageApiRequest;` 默认设置了分页的请求属性`page=1`和`per_page=10`
+`Larafly\Apidoc\Requests\PageApiRequest` 默认设置了分页的请求属性`page=1`和`per_page=10`
 
 ```php
 <?php

@@ -6,7 +6,7 @@
 使用命令行生成Response类
 
 ```sh
-php artisan apidoc:response UserResponse --p
+php artisan apidoc:response UserResponse
 ```
 
 如果您继承分页的类`PaginateResponse`，可以加上`--p`
