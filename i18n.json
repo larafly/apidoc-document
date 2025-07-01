@@ -23,6 +23,10 @@
     "en": "Configuration",
     "zh": "配置"
   },
+  "changelog": {
+    "en": "Changelog",
+    "zh": "更新记录"
+  },
   "group": {
     "en": "Group",
     "zh": "分组"

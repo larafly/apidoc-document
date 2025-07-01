@@ -10,5 +10,9 @@
   {
     "name": "configuration",
     "label": "configuration"
+  },
+  {
+    "name": "changelog",
+    "label": "changelog"
   }
 ]

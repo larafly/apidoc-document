@@ -16,8 +16,6 @@ If your class extends the paginated response class `PaginateResponse`, you can a
 php artisan apidoc:response UserResponse --p
 ```
 
-
-
 ### Example
 
 The `index` method in `HomeController` defines a response class `UserLogPaginateResponse`:
