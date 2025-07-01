@@ -1,6 +1,20 @@
 # 请求
 用于定义接口中请求的参数数据
 
+### 生成Request
+
+使用命令行生成Request类
+
+```sh
+php artisan apidoc:request UserRequest --p
+```
+
+如果您继承分页的类`PageApiRequest`，可以加上`--p`
+
+```sh
+php artisan apidoc:request UserRequest --p
+```
+
 ### 示例
 
 HomeController的index请求参数中定义`UserLogRequest $request`请求类

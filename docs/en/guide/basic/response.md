@@ -2,6 +2,22 @@
 
 Used to define the returned data of an API endpoint.
 
+### Generate Response
+
+Use the command line to generate a Response class:
+
+```sh
+php artisan apidoc:response UserResponse --p
+```
+
+If your class extends the paginated response class `PaginateResponse`, you can add the `--p` option:
+
+```sh
+php artisan apidoc:response UserResponse --p
+```
+
+
+
 ### Example
 
 The `index` method in `HomeController` defines a response class `UserLogPaginateResponse`:

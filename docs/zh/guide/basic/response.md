@@ -1,6 +1,21 @@
 # 响应
 用于定义接口中返回的数据
 
+### 生成Response
+
+使用命令行生成Response类
+
+```sh
+php artisan apidoc:response UserResponse --p
+```
+
+如果您继承分页的类`PaginateResponse`，可以加上`--p`
+
+```sh
+php artisan apidoc:response UserResponse --p
+```
+
+
 ### 示例
 
 HomeController的index返回参数中定义`UserLogPaginateResponse`响应类

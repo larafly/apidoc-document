@@ -2,6 +2,20 @@
 
 Used to define the request parameters for API endpoints.
 
+### Generate Request
+
+Use the command line to generate a Request class:
+
+```sh
+php artisan apidoc:request UserRequest --p
+```
+
+If your class extends the pagination base class `PageApiRequest`, you can add the `--p` option:
+
+```sh
+php artisan apidoc:request UserRequest --p
+```
+
 ### Example
 
 The `index` method in `HomeController` defines the request class `UserLogRequest`:
